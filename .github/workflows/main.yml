@@ -1,13 +1,11 @@
 name: Second workflow
 on: [push]
+env:
+  OS: ubuntu-latest
+
 jobs:
   checkout:
-    runs-on: ubuntu-latest
+    runs-on: $OS
     steps:
-      - run: ls
-      - uses: actions/checkout@v4
-        with:
-          sparse-checkout: .
-      - run: ls
-      - run: cat onefile
-      - run: cat test/anotherfile.txt
+      - run: echo Hello world !
+      
