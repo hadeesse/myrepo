@@ -5,7 +5,7 @@ env:
 
 jobs:
   checkout:
-    runs-on: $OS
+    runs-on: ${{ env.OS }}
     steps:
       - run: echo Hello world !
       
