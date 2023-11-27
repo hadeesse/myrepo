@@ -1,11 +1,11 @@
 name: Second workflow
 on: [push]
 env:
-  OS: ubuntu-latest
+  VAR_1: ubuntu-latest
 
 jobs:
   checkout:
-    runs-on: ${{ env.OS }}
+    runs-on: ${{ env.VAR_1 }}
     steps:
       - run: echo Hello world !
       
