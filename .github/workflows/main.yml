@@ -7,5 +7,10 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      - run: echo Hello world !
-        name: ${{ env.VAR_1 }}
+      - run: exit 1
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - run: echo DEPLOY to production
