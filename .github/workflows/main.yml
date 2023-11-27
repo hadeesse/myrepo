@@ -8,9 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
-
-  deploy:
-    runs-on: ubuntu-latest
-    if: success()
-    steps:
-      - run: echo DEPLOY to production
+      - run: JE SUIS RUN
