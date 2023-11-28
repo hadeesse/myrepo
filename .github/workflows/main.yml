@@ -11,12 +11,9 @@ jobs:
     # Map a step output to a job output
     steps:
       - id: step1
-        run: echo "test=hello" >> "$GITHUB_OUTPUT"
+        run: echo "test=hello" >> "$GITHUB_ENV"
       - id: step2
-        run: echo ${{ steps.step1.outputs.test }}
-      - id: step3
-        run: echo ${{ jobs.job1.outputs.test }}
-
+        run: echo $GITHUB_ENV
 
   job2:
     runs-on: ubuntu-latest
