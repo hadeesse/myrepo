@@ -1,12 +1,11 @@
 name: Second workflow
 on:
   push:
-    paths:
-      - '**.png'
-
+    branches-ignore:
+      - main
 jobs:
-  traitementImage:
+  deploy-staging:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "traitement d'image"
+      - run: echo deploy staging
 
