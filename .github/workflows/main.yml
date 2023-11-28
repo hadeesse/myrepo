@@ -6,17 +6,12 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    outputs:
-     myvar: ${{ steps.step1.outputs.test }}
-    # Map a step output to a job output
     steps:
       - id: step1
-        run: echo "test=hello" >> "$GITHUB_ENV"
-      - id: step2
-        run: echo $GITHUB_ENV
+        run: echo "test=hello" >> "$GITHUB_OUTPUT"
 
   job2:
     runs-on: ubuntu-latest
     needs: job1
     steps:
-      - run: echo  ${{needs.job1.step1.outputs.test }}
+      - run: echo  ${{needs.job1.outputs }}
