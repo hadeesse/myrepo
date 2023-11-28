@@ -8,5 +8,5 @@ jobs:
   traitementImage:
     runs-on: ubuntu-latest
     steps:
-      - run: echo traitement d'image
+      - run: echo "traitement d'image"
 
