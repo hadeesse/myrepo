@@ -2,7 +2,7 @@ name: Second workflow
 on:
   push:
     branches:
-      - main
+      - feature*
 
 jobs:
   deploy:
