@@ -1,13 +1,8 @@
 name: Second workflow
 on:
   push:
-    branches:
-      - feature*
+    paths:
+      - '**.png'
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - run: echo Workflow runned !
-    
+
 
