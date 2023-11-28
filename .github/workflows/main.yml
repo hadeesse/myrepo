@@ -10,6 +10,8 @@ jobs:
     steps:
       - id: step1
         run: echo "test=hello" >> "$GITHUB_OUTPUT"
+      - id: step2
+        run: echo $GITHUB_OUTPUT
 
   job2:
     runs-on: ubuntu-latest
