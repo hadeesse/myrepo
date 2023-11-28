@@ -3,8 +3,19 @@ on: [push]
 env:
   VAR_1: ubuntu-latest
 
-jobs:
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - run: cat $GITHUB_ENV
+jobs :
+  premier_job :
+    runs-on : ubuntu-latest
+    steps :
+      - name : définir une sortie
+        id : etape1
+        run : echo "output_var=Bonjour" >> $GITHUB_ENV
+    outputs :
+      ma_sortie : ${{ steps.etape1.outputs.output_var }}
+
+  deuxieme_job :
+    needs : premier_job
+    runs-on : ubuntu-latest
+    steps :
+      - name : utiliser la sortie du premier job
+        run : echo "La valeur de la sortie du premier job est ${{ needs.premier_job.outputs.ma_sortie }}"
