@@ -6,14 +6,17 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    outputs:
+     myvar: ${{ steps.step1.outputs.test }}
     # Map a step output to a job output
     steps:
       - id: step1
         run: echo "test=hello" >> "$GITHUB_OUTPUT"
       - id: step2
-        run: echo $GITHUB_OUTPUT
+        run: echo ${{ steps.step1.outputs.test }}
       - id: step3
-        run: cat $GITHUB_OUTPUT
+        run: echo ${{ steps.job.outputs.test }}
+
 
   job2:
     runs-on: ubuntu-latest
