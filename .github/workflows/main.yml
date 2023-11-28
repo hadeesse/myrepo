@@ -15,7 +15,7 @@ jobs:
       - id: step2
         run: echo ${{ steps.step1.outputs.test }}
       - id: step3
-        run: echo ${{ job.outputs.test }}
+        run: echo ${{ jobs.job1.outputs.test }}
 
 
   job2:
