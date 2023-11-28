@@ -1,19 +1,13 @@
 name: Second workflow
-on: [push]
-env:
-  VAR_1: ubuntu-latest
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  job1:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - id: step1
-        run: echo "test=hello" >> "$GITHUB_OUTPUT"
-      - id: step2
-        run: echo ${{ steps.step1.outputs.test }}
+    - run: echo Workflow runned !
+    
 
-  job2:
-    runs-on: ubuntu-latest
-    needs: job1
-    steps:
-      - run: echo  ${{needs.job1.outputs.test }}
