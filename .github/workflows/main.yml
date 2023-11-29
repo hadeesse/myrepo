@@ -9,7 +9,7 @@ jobs:
           echo $SHELL
           pwd
       - uses: actions/checkout@v4
-      - working-directory: /test
+      - working-directory: ./test
         run: |
           ls
           pwd
