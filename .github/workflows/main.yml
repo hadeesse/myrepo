@@ -6,5 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Afficher un message de notification
+        id: step1 
+        run: echo ::set-outputs name=fruit::pomme
+      - name: Afficher un message de notification
+        if: steps.step1.fruit == pomme
         run: echo ::error::Erreur ici
    
