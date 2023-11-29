@@ -9,7 +9,6 @@ jobs:
         id: step1 
         run: echo ::set-output name=fruit::pomme
       - name: Afficher un message de notification
-        if: steps.step1.outputs.fruit == "poire"
         run: | 
           echo ::group::
           echo ::error::Erreur ici
