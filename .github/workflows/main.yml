@@ -6,13 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Afficher un message de notification
-        id: step1 
-        run: echo ::set-output name=fruit::pomme
-      - name: Afficher un message de notification
-        run: | 
-          echo ::group::
-          echo ::error::Erreur ici
-          echo salut
-          echo ca va
-          echo ::endgroup::
+        run: echo "::notice file=exemple.txt,line=1,col=5::Un message de notification"
    
