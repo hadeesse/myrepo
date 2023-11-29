@@ -2,8 +2,17 @@ name: Second workflow
 on: push
 
 jobs:
-  exemple_notice:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - run: echo $SHELL
+  
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $SHELL
+        shell: sh
+      - run: echo $ENV:shell
+        shell: pwsh
+        
    
