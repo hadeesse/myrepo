@@ -5,14 +5,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $SHELL
-  
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo $SHELL
-        shell: sh
-      - run: echo $ENV:shell
-        shell: pwsh
-        
+      - run: |
+          echo $SHELL
+          pwd
+      - working-directory: ./script/test/123
+        run: pwd
    
