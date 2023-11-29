@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Définir un paramètre de sortie
-        run: echo "pomme" >> $GITHUB_OUTPUT
+        run: echo fruit=pomme >> $GITHUB_OUTPUT
         # run: echo "::set-output name=fruit::pomme"
         id: step1
       - name: Utiliser le paramètre de sortie
