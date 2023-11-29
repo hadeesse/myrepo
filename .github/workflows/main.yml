@@ -10,3 +10,6 @@ jobs:
         # run: echo "::set-output name=fruit::pomme"
         id: step1
      
+      - name: Utiliser le paramètre de sortie
+        run: echo ::debug::${{ steps.step1.outputs.fruit }}
+   
