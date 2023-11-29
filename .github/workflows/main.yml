@@ -2,14 +2,9 @@ name: Second workflow
 on: push
 
 jobs:
-  exemple_set_output:
+  exemple_notice:
     runs-on: ubuntu-latest
     steps:
-      - name: Définir un paramètre de sortie
-        run: echo fruit=pomme >> $GITHUB_OUTPUT
-        # run: echo "::set-output name=fruit::pomme"
-        id: step1
-     
-      - name: Utiliser le paramètre de sortie
-        run: echo ::debug::${{ steps.step1.outputs.fruit }}
+      - name: Afficher un message de notification
+        run: echo "::notice file=exemple.txt,line=1,col=5::Un message de notification"
    
