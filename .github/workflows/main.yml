@@ -9,6 +9,6 @@ jobs:
         id: step1 
         run: echo ::set-outputs name=fruit::pomme
       - name: Afficher un message de notification
-        if: steps.step1.outputs.fruit == "pomme"
+        if: ${{ steps.step1.outputs.fruit == "pomme" }}
         run: echo ::error::Erreur ici
    
