@@ -6,5 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Afficher un message de notification
-        run: echo "::notice file=exemple.txt,line=1,col=5::Un message de notification"
+        run: echo ::error::Erreur ici
    
