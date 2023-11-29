@@ -9,5 +9,4 @@ jobs:
         run: echo fruit=pomme >> $GITHUB_OUTPUT
         # run: echo "::set-output name=fruit::pomme"
         id: step1
-      - name: Utiliser le paramètre de sortie
-        run: echo ::debug::Debug this part
+     
