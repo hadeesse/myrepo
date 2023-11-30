@@ -11,24 +11,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ls
-      - uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-${{ hashFiles('./vite-project/.package-lock.json') }}
-          path: ./vite-project/.npm
-      - name: install dependencies
-        working-directory: ./vite-project
-        run: npm install
+  #     - uses: actions/cache@v3
+  #       with:
+  #         key: ${{ runner.os }}-${{ hashFiles('./vite-project/.package-lock.json') }}
+  #         path: ./vite-project/.npm
+  #     - name: install dependencies
+  #       working-directory: ./vite-project
+  #       run: npm install
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-${{ hashFiles('./vite-project/.package-lock.json') }}
-          path: ./vite-project/.npm
-      - name: install dependencies
-        working-directory: ./vite-project
-        run: npm install
-      - name: test
-        run: echo test
+  # test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/cache@v3
+  #       with:
+  #         key: ${{ runner.os }}-${{ hashFiles('./vite-project/.package-lock.json') }}
+  #         path: ./vite-project/.npm
+  #     - name: install dependencies
+  #       working-directory: ./vite-project
+  #       run: npm install
+  #     - name: test
+  #       run: echo test
