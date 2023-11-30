@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.cloud == 'ovh' }}
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         include:
           - cloud: ovh
