@@ -59,6 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        fail-fast: true
         include:
           - cloud: ovh
             endpoint: ovh.com
