@@ -1,14 +1,28 @@
 name: my cache
 on: push
 
+# simple matrix
+
+# jobs:
+# build:
+#   runs-on: ubuntu-latest
+#   strategy:
+#     matrix:
+#       os: [ubuntu-latest, window-latest, macos-latest]
+#       v: [12, 13, 14]
+#   steps:
+#     - run: |
+#         echo ${{ matrix.os }} : ${{ matrix.v }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, window-latest, macos-latest]
-        v: [12, 13, 14]
+        os: [ubuntu-latest, window-latest]
+        v: [12, 13]
+        include:
+          - key: value
     steps:
       - run: |
-          echo "================="
-          echo ${{ matrix.os }} : ${{ matrix.v }}
+          echo ${{ matrix.os }} : ${{ matrix.v }} : ${{ matrix.key }}
