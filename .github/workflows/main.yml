@@ -4,14 +4,5 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - run: |
-          echo 123 > test.txt
-          git config --global user.email "ci@test.com"
-          git config --global user.name "paul"
-          git add test.txt
-          git commit -m "add test.txt"
-          git push origin main
+      - run: echo Hello World !
