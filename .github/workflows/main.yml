@@ -1,73 +1,12 @@
-name: my cache
+name: Mon premier workflow
 on: push
-
-# simple matrix
-
-# jobs:
-# build:
-#   runs-on: ubuntu-latest
-#   strategy:
-#     matrix:
-#       os: [ubuntu-latest, window-latest, macos-latest]
-#       v: [12, 13, 14]
-#   steps:
-#     - run: |
-#         echo ${{ matrix.os }} : ${{ matrix.v }}
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         os: [ubuntu-latest, window-latest]
-#         v: [12, 13]
-#         include:
-#           - key: value
-#     steps:
-#       - run: |
-#           echo ${{ matrix.os }} : ${{ matrix.v }} : ${{ matrix.key }}
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         os: [ubuntu-latest, window-latest]
-#         v: [12, 13]
-#         include:
-#           - os: ubuntu-latest
-#             key: value
-#     steps:
-#       - run: |
-#           echo ${{ matrix.os }} : ${{ matrix.v }} : ${{ matrix.key }}
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         os: [ubuntu-latest, window-latest]
-#         v: [12, 13]
-#         exclude:
-#           - v: 12
-#     steps:
-#       - run: |
-#           echo ${{ matrix.os }} : ${{ matrix.v }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    # continue-on-error: ${{ matrix.cloud == 'ovh' }}
-    strategy:
-      fail-fast: true
-      matrix:
-        include:
-          - cloud: ovh
-            endpoint: ovh.com
-          - cloud: aws
-            endpoint: aws.com
     steps:
       - run: |
-          echo ${{ matrix.cloud }} : ${{ matrix.endpoint }}
-      - run: exit 1
-        if: matrix.cloud == 'ovh'
+          echo 123 > test.txt
+          git add test.txt
+          git commit -m "add test.txt"
+          git push origin main
