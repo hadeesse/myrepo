@@ -57,7 +57,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.cloud == 'ovh' }}
+    # continue-on-error: ${{ matrix.cloud == 'ovh' }}
     strategy:
       fail-fast: true
       matrix:
