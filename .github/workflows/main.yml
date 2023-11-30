@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        exclude:
+        include:
           - cloud: ovh
             endpoint: ovh.com
           - cloud: aws
