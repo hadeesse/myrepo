@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('./vite-project/.package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('./vite-project/package-lock.json') }}
           path: ./vite-project/.npm
       - name: install dependencies
         working-directory: ./vite-project
@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('./vite-project/.package-lock.json') }}
+          key: ${{ runner.os }}-${{ hashFiles('./vite-project/package-lock.json') }}
           path: ./vite-project/.npm
       - name: install dependencies
         working-directory: ./vite-project
