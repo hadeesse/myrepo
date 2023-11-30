@@ -22,7 +22,8 @@ jobs:
         os: [ubuntu-latest, window-latest]
         v: [12, 13]
         include:
-          - key: value
+          - os: ubuntu-latest
+            key: value
     steps:
       - run: |
           echo ${{ matrix.os }} : ${{ matrix.v }} : ${{ matrix.key }}
