@@ -41,15 +41,29 @@ on: push
 #       - run: |
 #           echo ${{ matrix.os }} : ${{ matrix.v }} : ${{ matrix.key }}
 
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest, window-latest]
+#         v: [12, 13]
+#         exclude:
+#           - v: 12
+#     steps:
+#       - run: |
+#           echo ${{ matrix.os }} : ${{ matrix.v }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, window-latest]
-        v: [12, 13]
         exclude:
-          - v: 12
+          - cloud: ovh
+            endpoint: ovh.com
+          - cloud: aws
+            endpoint: aws.com
     steps:
       - run: |
-          echo ${{ matrix.os }} : ${{ matrix.v }}
+          echo ${{ matrix.cloud }} : ${{ matrix.endpoint }}
