@@ -7,5 +7,5 @@ jobs:
     steps:
       - name: Une étape
         run: |
-          titre="${{ github.ref }}"
+          titre="${{ github.event.head_commit.message }}"
           echo hello
