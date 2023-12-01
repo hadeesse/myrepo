@@ -5,23 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 123 > test.txt
-      - uses: actions/upload-artifact@v3
-        with:
-          name: myfirstartifact
-          path: ./test.txt
-          if-no-files-found: warn
-          retention-days: 1
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: myfirstartifact
-          path: ./ici
       - run: |
-          ls
-          ls ./ici
-          cat ./ici/test.txt
+          echo #TITRE >> $GITHUB_STEP_SUMMARY
+          echo il c'est passé si et ça >> $GITHUB_STEP_SUMMARY
+      - run: |
+          echo #JE SUIS UNE AUTRE STEP AVEC UN AUTRE TITRE >> $GITHUB_STEP_SUMMARY
+          echo il c'est passé si et ça >> $GITHUB_STEP_SUMMARY
