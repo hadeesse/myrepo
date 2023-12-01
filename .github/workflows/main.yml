@@ -4,8 +4,9 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment:
-      name: test
-      url: https://test.fr
+    container:
+      image: node:16
     steps:
-      - run: echo Hello world !
+      - run: |
+          ls -la
+          npm -v
