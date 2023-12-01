@@ -2,14 +2,16 @@ name: Mon premier workflow
 on: push
 
 jobs:
-  testdocker:
+  build:
     runs-on: ubuntu-latest
-    services:
-      redis:
-        image: redis
     steps:
-      - name: install redis-cli
-        run: sudo apt update && sudo apt install redis-tools -y
-      - name: test connexion
-        run: |
-          redis-cli -h localhost -p 6379 ping
+      - run: echo 123 > test.txt
+      - uses: actions/upload-artifact
+        with:
+          name: myfirstartifact
+          path: ./test.txt
+          if-no-files-found: warn
+          retention-days: 1
+
+  # deploy:
+  #   runs-on: ubuntu-latest
