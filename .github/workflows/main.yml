@@ -13,5 +13,14 @@ jobs:
           if-no-files-found: warn
           retention-days: 1
 
-  # deploy:
-  #   runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: myfirstartifact
+          path: ./ici
+      - run: |
+          ls
+          ls ./ici
+          cat ./ici/test.txt
