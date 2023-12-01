@@ -15,4 +15,4 @@ jobs:
       - name: test connexion
         run: |
           sleep 5
-          redis-cli -h localhost:6379 ping
+          redis-cli -h localhost -p 6379 ping
