@@ -5,7 +5,7 @@ jobs:
   check-title:
     runs-on: ubuntu-latest
     steps:
-      - name: Une étape !!
+      - name: Une étape !!!
         run: |
           titre="${{ github.event.head_commit.message }}"
           echo hello
