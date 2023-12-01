@@ -4,9 +4,8 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    concurrency: waitforme
+    environment:
+      name: test
+      url: https://test.fr
     steps:
-      - run: |
-          echo Very long job
-          sleep 100
-          echo Done !
+      - run: echo Hello world !
